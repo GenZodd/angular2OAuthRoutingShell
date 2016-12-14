@@ -10,13 +10,15 @@ export class AuthService {
   constructor() {
       // Add callback for lock `authenticated` event
     this.lock.on("authenticated", (authResult:any) => {
+      alert("got callback");
       localStorage.setItem('id_token', authResult.idToken);
+      localStorage.setItem('test', "123");
     });
   }
 
 options = {
   auth: {
-    redirectUrl: 'http://be4c9c39.ngrok.io', 
+    redirectUrl: 'http://be4c9c39.ngrok.io', // replace with your ngrok URL if running on localhost or behind a firewall
     responseType: 'token'
   }
 };  
@@ -35,6 +37,8 @@ options = {
   
   login() {
     // Call the show method to display the widget.
+    
+      localStorage.setItem('login', "123");
     this.lock.show();
   }
 

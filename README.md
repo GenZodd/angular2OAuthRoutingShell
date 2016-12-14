@@ -4,6 +4,10 @@
 This repository holds TypeScript source code of and angular2 application that is setup as a shell for getting a project going with JWT authentication
 and a basic routing setup. 
 
+This solution uses [Auth0](https://auth0.com) for integration to authentication sources. However, the authentication service TypeScript code can be updated to point at any OAuth vendor.
+
+It also uses [angular2-jwt](https://github.com/auth0/angular2-jwt) to support authenticated HTTP calls. 
+
 It's been extended with testing support so you can start writing tests immediately.
 
 **This is not the perfect arrangement for your application. It is not designed for production.
