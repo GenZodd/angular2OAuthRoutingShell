@@ -1,16 +1,13 @@
-# Angular QuickStart Source
-[![Build Status][travis-badge]][travis-badge-url]
+# Angular QuickStart Source for JWT OAuth and Routing
+[![Build Status]
 
-This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
-the foundation for most of the documentation samples and potentially a good starting point for your application.
+This repository holds TypeScript source code of and angular2 application that is setup as a shell for getting a project going with JWT authentication
+and a basic routing setup. 
 
 It's been extended with testing support so you can start writing tests immediately.
 
 **This is not the perfect arrangement for your application. It is not designed for production.
-It exists primarily to get you started quickly with learning and prototyping in Angular**
-
-We are unlikely to accept suggestions about how to grow this QuickStart into something it is not.
-Please keep that in mind before posting issues and PRs.
+It exists primarily to get you started quickly with learning and prototyping in Angular and using authentication and JWT**
 
 ## Prerequisites
 
@@ -25,7 +22,7 @@ Older versions produce errors.
 
 We recommend [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
 
-## Create a new project based on the QuickStart
+## Create a new project based on the QuickStart - Shell
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```bash
