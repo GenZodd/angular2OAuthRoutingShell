@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NavigationComponent } from "../shared/navigation/navigation.component"
+
 @Component({
     moduleId: module.id,
     selector: 'dashboard',

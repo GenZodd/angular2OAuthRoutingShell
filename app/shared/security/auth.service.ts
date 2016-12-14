@@ -12,7 +12,6 @@ export class AuthService {
     this.lock.on("authenticated", (authResult:any) => {
       alert("got callback");
       localStorage.setItem('id_token', authResult.idToken);
-      localStorage.setItem('test', "123");
     });
   }
 
@@ -23,7 +22,8 @@ options = {
   }
 };  
 
-  // Configure Auth0
+  // Configure Auth0  
+  // lock = new Auth0Lock('YOUR KEY', 'YOUR AUTH0 URL', this.options);
   lock = new Auth0Lock('0fGZyHCsBImAYwrHhFKci4NZqtxDqC39', 'zodd.auth0.com', this.options);
 
   // getThing() {
@@ -37,8 +37,6 @@ options = {
   
   login() {
     // Call the show method to display the widget.
-    
-      localStorage.setItem('login', "123");
     this.lock.show();
   }
 

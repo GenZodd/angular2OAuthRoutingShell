@@ -15,20 +15,18 @@ import { AppComponent }  from './app.component';
 import { LoginComponent } from "./shared/security/login.component"
 import { DashboardComponent } from "./dashboard/dashboard.component"
 import { NavigationComponent } from "./shared/navigation/navigation.component"
-import { AdminComponent } from "./admin/admin.component"
-import { UserAdminComponent } from "./admin/user-admin.component"
 
 // services
 import { AuthGuard } from "./shared/security/auth-guard.service"
 import { AuthService } from "./shared/security/auth.service"
 
-// routing
-import { AdminRoutingModule } from "./admin/admin-routing.module"
+// modules
+import { AdminModule } from "./admin/admin.module" // note everything in the app folder is loaded via this including the admin routes
 
 export const routeConfig: Routes = [
     {
         path: '',
-        component: NavigationComponent,
+        component: NavigationComponent, //
         children: [
             {
                 path: '',
@@ -43,9 +41,10 @@ export const routeConfig: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routeConfig), AdminRoutingModule ],
-  declarations: [ AppComponent, LoginComponent, DashboardComponent, NavigationComponent, AdminComponent, UserAdminComponent ],
+  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routeConfig), AdminModule ],
+  declarations: [ AppComponent, LoginComponent, DashboardComponent, NavigationComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ AUTH_PROVIDERS, AuthGuard, AuthService ]
+  providers: [ AUTH_PROVIDERS, AuthGuard, AuthService ],
+  exports: [ NavigationComponent ]
 })
 export class AppModule { }
