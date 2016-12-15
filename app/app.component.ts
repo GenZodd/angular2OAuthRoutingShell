@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
     moduleId: module.id,
@@ -6,12 +7,9 @@ import { Component } from '@angular/core';
     //templateUrl: "D:\EP\Platform\Outsell.Dep\Outsell.Dep.Web.Client\app\app.component.htmls"
     templateUrl: 'app.component.html'
 })
-export class AppComponent {
-    name = 'Todd';
-    title = 'Angular';
-    h1Color = 'purple';
 
-    clickIt() {
-        this.h1Color = this.h1Color === "purple" ? "blue" : "purple";
+export class AppComponent {
+    constructor(public toastr: ToastsManager, vRef: ViewContainerRef) {
+        this.toastr.setRootViewContainerRef(vRef);
     }
 }

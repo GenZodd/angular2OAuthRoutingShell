@@ -10,6 +10,8 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './customers/in-memory-data.service';
 
+import { ToastModule, ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 // components
 import { AppComponent }  from './app.component';
 import { LoginComponent } from "./shared/security/login.component"
@@ -41,7 +43,7 @@ export const routeConfig: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routeConfig), AdminModule ],
+  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routeConfig), AdminModule, ToastModule ],
   declarations: [ AppComponent, LoginComponent, DashboardComponent, NavigationComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ AUTH_PROVIDERS, AuthGuard, AuthService ],
